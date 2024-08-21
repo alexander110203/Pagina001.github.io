@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Estilos para el header */
+header {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 125px;
+    width: 100%; 
+}
+
+
+/* Estilos para la imagen del logo */
+.logo1 {
+    width: 210px;
+    height: auto;
+    display: inline-block; /* Asegura que la imagen se comporte como un bloque en línea */
+    vertical-align: middle; /* Alinea verticalmente la imagen dentro del header */
+}
+
+
+/*Buscador*/
+
+/* Estilos para el contenedor del buscador */
+.container {
+  position: absolute;
+  top: 5%; /* Alinea verticalmente en el centro de la página */
+  left: 50%; /* Alinea horizontalmente en la mitad de la página */
+  transform: translateX(-50%); /* Corrige el centrado con respecto al 50% del ancho */
+  width: 550px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el input del buscador */
+.container input {
+  width: 500px;
+  padding: 10px;
+  padding-right: 35px;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Estilos para el botón del buscador */
+.container button {
+  background-color: white;
+  padding: 10px 15px;
+  position: absolute;
+  border: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 0 5px 5px 0;
+  color: black; /* Cambia el color del ícono a negro para que sea visible */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container button:hover {
+  background-color: black;
+  color: white; /* Cambia el color del ícono a blanco en hover */
+}
+
+
+/*Menu desplegable*/
+
+/* Estilos para el menú desplegable */
+#custom-btn-menu {
+  display: none;
+}
+
+.custom-container-menu {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999; /* Asegura que esté encima de otros elementos */
+}
+
+#custom-btn-menu:checked ~ .custom-container-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-cont-menu {
+  width: 100%;
+  max-width: 250px;
+  background: #000000;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: all 500ms ease;
+  transform: translateX(100%);
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  font-family: Arial, sans-serif;
+}
+
+#custom-btn-menu:checked ~ .custom-container-menu .custom-cont-menu {
+  transform: translateX(0%);
+}
+
+.custom-cont-menu nav {
+  margin-top: 50px; /* Espacio superior para separar del encabezado */
+}
+
+.custom-cont-menu nav a {
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  color: #c7c7c7;
+  border-left: 5px solid transparent;
+  transition: all 400ms ease;
+}
+
+.custom-cont-menu nav a:hover {
+  border-left: 5px solid #c7c7c7;
+  background: #1f1f1f;
+}
+
+/* Estilos para el encabezado y el botón de menú */
+.custom-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0; /* Asegura que el encabezado ocupe toda la parte superior */
+  background-color: white;
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  display: flex;
+  justify-content: space-between; /* Ajusta el contenido del encabezado */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra */
+  font-family: Arial, sans-serif;
+}
+
+.custom-btn-menu {
+ position: absolute;
+  top: 25px;
+  right: 35px;
+  z-index: 1001;
+}
+
+.custom-icon-menu {
+  cursor: pointer;
+  font-size: 30px;
+  color: white; /* Cambia el color según tus necesidades */
+}
+
+
+/* Carrito */
+button.cart {
+  position: absolute;
+  right: 25px;
+  top: 138px; /* Usa 'top' en lugar de 'margin-top' para un posicionamiento fijo */
+  cursor: pointer;
+  height: 25px;
+  background: none; /* Eliminar el fondo por defecto */
+  border: none; /* Eliminar el borde por defecto */
+  padding: 0;
+  z-index: 1001; /* Asegura que esté encima de otros elementos*/
+}
+
+button.cart i {
+  font-size: 25px; /* Ajusta este valor según sea necesario*/ 
+}
+
+
+/*Productos*/
+
+/* Asegúrate de que el contenedor tenga margen superior y padding en los lados */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 50px; /* Ajusta este valor según sea necesario para separar del header */
+  padding: 0 20px 20px; /* Ajusta este valor según sea necesario para espacio en los lados */
+  font-family: Arial, sans-serif;
+}
+
+/* Redondeo de bordes de los elementos */
+.items {
+  border-radius: 10px;
+}
+
+/* Efecto de sombra en hover */
+.items:hover {
+  box-shadow: 0 10px 20px black;
+}
+
+/* Estilo de las imágenes */
+.items img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* Adapta la imagen y lo centra */
+  border-radius: 10px 10px 0 0; /* Borde superior redondeado */
+  transition: all .5s; /* Tiempo de animación */
+}
+
+/* Asegura que la imagen no se desborde */
+.items figure {
+  overflow: hidden;
+}
+
+/* Efecto de zoom en hover */
+.items:hover img {
+  transform: scale(1.2); /* Efecto de imagen */
+}
+
+/* Información del producto */
+.infoproduct {
+  padding: 15px 30px;
+  line-height: 2;
+  display: flex;
+  flex-direction: column; /* Cambia a columna para una mejor organización */
+  gap: 10px;
+}
+
+/* Estilo del precio */
+.precio {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+/* Estilo del botón */
+.infoproduct button {
+  border: none;
+  background: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 10px; /* Añadir padding para mejorar el área clicable */
+  border-radius: 5px; /* Bordes redondeados para el botón */
+  font-family: Arial, sans-serif;
+}
+
+
+/*pie de pagina*/
+
+footer {
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.contenedor-pie {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contenedor-pie a{
+  text-decoration: none;
+  color: white;
+}
+
+.fila-pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.columna-pie {
+  flex-basis: 30%;
+  margin: 20px;
+}
+
+.columna-pie h3 {
+  margin-top: 0;
+}
+
+.redes-sociales {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.redes-sociales li {
+  margin-right: 20px;
+}
+
+.redes-sociales img {
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+}
+
+.filafinal{
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
